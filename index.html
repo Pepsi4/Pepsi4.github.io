@@ -1,1 +1,205 @@
-Hello World
+﻿<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link href="DefaultCSS.css" rel="stylesheet" type="text/css" />
+    <title>Hello world!</title>
+</head>
+<body style="font-family: arial; font-size: 12px;">
+
+    <div id="slider">
+        <div id="slider_container">
+            <div id="slider_moving_container">
+
+                <!-- 1st game -->
+                <div id="slider_1" style="background-image: url('/Images/multiplayer.png');"></div>
+                <div id="slider_info_1">
+                    <a href="#portfolio_title_1" id="slider_title_1" style="color: goldenrod">Multiplayer-action platformer</a>
+                    <div id="slider_description_1">ЕЕЕЕЕЕЕ bbb</div>
+                </div>
+
+                <!-- 2nd game-->
+                <div id="slider_2" style="background-image: url('/Images/strangerwood2.jpg');"></div>
+                <div id="slider_info_2">
+                    <a href="#portfolio_title_2" id="slider_title_2" style="color: aqua">The Strangerwood</a>
+                    <div id="slider_description_2">AYYY YY Y YY L M A A A O O OO </div>
+                </div>
+
+
+                <!-- 3d game -->
+                <div id="slider_3" style="background-image: url('/Images/phone1.jpg')"></div>
+                <div id="slider_info_3">
+                    <a href="#portfolio_title_3" id="slider_title_3" style="color: tan">Mobile Reaction Game</a>
+                    <div id="slider_description_3">( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)</div>
+                </div>
+            </div>
+        </div>
+        &nbsp;
+        <a href="#" id="slider_right"></a>
+        <a href="#" id="slider_left"></a>
+    </div>
+
+    <div id="info">
+        <div id="personal" class="black-block" style="opacity: 0;">
+            <div id="personal_title">
+                My own personal site
+            </div>
+
+            <div id="personal_text">
+                Hi! Here you can find some information about me, see some of my portfolio, find out how to contact me, etc.
+            </div>
+        </div>
+
+        <div id="about" class="black-block" style="opacity: 0;">
+            <div id="about_title">
+                About me
+            </div>
+
+            <div id="about_text">
+                My name is Kirill, I'm 18 years old begginer programmer from Kiev.
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="black-block" id="portfolio_1" style="opacity: 0">
+            <div class="portfolio_title">
+                The Multiplayer-action platformer
+            </div>
+            <div class="portfolio_text">
+                Go through levels, set your own records, play with your friends!
+                <br />
+                Gameplay: dodge barriers, get points, upgrade your hero.
+                <br />
+                See more on <a href="https://github.com/Pepsi4/Multiplayer-Action-Platformer">GitHub</a>
+                <br />
+                <img src="/Images/multiplayer5.jpg" />
+            </div>
+        </div>
+
+        <div class="black-block" id="portfolio_2" style="opacity: 0">
+            <div class="portfolio_title">
+                Srangerwood
+            </div>
+            <div class="portfolio_text">
+                In this game you can fight with oponents, get gold, buy on it upgrades for more and more powerfull hero.
+                <br />
+                Gameplay: press F when the position is the best and dealing more damage.
+                <br />
+                See more on <a href="https://github.com/Pepsi4/2DArcade">GitHub</a>
+                <br />
+                <img src="/Images/strangerwood3.jpg" />
+            </div>
+        </div>
+
+        <div class="black-block" id="portfolio_3" style="opacity: 0">
+            <div class="portfolio_title">
+                The Mobile Reaction Game
+            </div>
+            <div class="portfolio_text">
+                Press to the platforms and take more score. Set your own records. Available with mobile platforms (IOS/Android).
+                <br />
+                Gameplay: push platforms on screen or click it (PC) to destroy. Don't let them hit you!
+                <br />
+                See more on <a href="https://github.com/Pepsi4/Reaction-Game">GitHub</a>
+                <br />
+                <img src="/Images/phone2.jpg" />
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        //Current item number.
+        var slider_position = 0;
+        //If we want more than 3 items.
+        var slider_total = 2;
+        //We shuld stop the auto showing sometimes.
+        var slider_auto = true;
+        //Delay in milliseconds to swtich items in auto-showing mode.
+        var timeDealay = 2500;
+
+
+        //shows element when user close to see it.
+        $(window).scroll(function () {
+            CheckElementPosition('personal');
+            CheckElementPosition('about');
+            CheckElementPosition('portfolio_1');
+            CheckElementPosition('portfolio_2');
+            CheckElementPosition('portfolio_3');
+        });
+
+
+        function CheckElementPosition(id) {
+            if ($(window).scrollTop() + document.documentElement.clientHeight >= $('#' + id).offset().top) {
+                ShowTheElement(id, $('#' + id).offset().top);
+                return;
+            }
+        }
+
+        function ShowTheElement(id) {
+            var currentOpacity = document.getElementById(id).style.opacity;
+            if (currentOpacity < 1) {
+                currentOpacity = Number(currentOpacity) + 0.01;
+                document.getElementById(id).style.opacity = currentOpacity;
+                setTimeout(function() { ShowTheElement(id); }, 100);
+            };
+        }
+
+
+
+        //right button click method (next slide button)
+        $('#slider_right').click(function () {
+            alert($(window).scrollTop() + 'top');   //1500 -- настоящее местоположение
+            slider_auto = false;
+            slider_position++;
+            if (slider_position > slider_total) slider_position = 0;
+            $('#slider_moving_container').animate({ left: -((slider_position) * 100) + '%' });
+            return false;
+        });
+
+        //left button click method (last slide button)
+        $('#slider_left').click(function () {
+            slider_auto = false;
+            slider_position--;
+            if (slider_position < 0) slider_position = slider_total;
+            $('#slider_moving_container').animate({ left: -((slider_position) * 100) + '%' });
+            return false;
+        });
+
+        $('a[href^="#"]').bind('click.smoothscroll', function (e) {
+            e.preventDefault();
+
+            var target = this.hash,
+             $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 500, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+
+        //If user didn't changed item by himself
+        //we are using this method
+        function slider_auto_run() {
+            setTimeout(function () {
+                if (!slider_auto) return;
+                slider_position++;
+                if (slider_position > slider_total) slider_position = 0;
+                $('#slider_moving_container').animate({ left: -((slider_position) * 100) + '%' });
+
+                slider_auto_run();
+            }, timeDealay);
+
+        };
+
+        slider_auto_run();
+    </script>
+
+</body>
+</html>
+
+
