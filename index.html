@@ -17,14 +17,14 @@
                 <div id="slider_1" style="background-image: url('/Images/multiplayer.png');"></div>
                 <div id="slider_info_1">
                     <a href="#portfolio_title_1" id="slider_title_1" style="color: goldenrod">Multiplayer-action platformer</a>
-                    <div id="slider_description_1">ЕЕЕЕЕЕЕ bbb</div>
+                    <div id="slider_description_1">Available singleplayer version <a href="https://github.com/Pepsi4/Multiplayer-Action-Platformer/tree/SinglePlayerStable-v1.0"><i>here</i></a></div>
                 </div>
 
                 <!-- 2nd game-->
                 <div id="slider_2" style="background-image: url('/Images/strangerwood2.jpg');"></div>
                 <div id="slider_info_2">
                     <a href="#portfolio_title_2" id="slider_title_2" style="color: aqua">The Strangerwood</a>
-                    <div id="slider_description_2">AYYY YY Y YY L M A A A O O OO </div>
+                    <div id="slider_description_2">Fight on arena, earn more money, buy upgrades.../div>
                 </div>
 
 
@@ -81,12 +81,12 @@
 
         <div class="black-block" id="portfolio_2" style="opacity: 0">
             <div class="portfolio_title">
-                Srangerwood
+                Strangerwood
             </div>
             <div class="portfolio_text">
                 In this game you can fight with oponents, get gold, buy on it upgrades for more and more powerfull hero.
                 <br />
-                Gameplay: press F when the position is the best and dealing more damage.
+                Gameplay: press F when the position is the best and deal more damage. Use → and ← to choose something in the shop. To move use A and D. Press F to action.
                 <br />
                 See more on <a href="https://github.com/Pepsi4/2DArcade">GitHub</a>
                 <br />
@@ -152,7 +152,6 @@
 
         //right button click method (next slide button)
         $('#slider_right').click(function () {
-            alert($(window).scrollTop() + 'top');   //1500 -- настоящее местоположение
             slider_auto = false;
             slider_position++;
             if (slider_position > slider_total) slider_position = 0;
