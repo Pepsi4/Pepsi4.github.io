@@ -1,0 +1,211 @@
+﻿
+/*-------SLIDER------*/
+
+#slider_1, #slider_2, #slider_3, #slider, #slider_container, #slider_moving_container {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+#slider_1 {
+    left: 0%;
+    position: absolute;
+}
+
+#slider_2, #slider_info_2 {
+    left: 100%;
+    position: absolute;
+}
+
+#slider_3, #slider_info_3 {
+    left: 200%;
+    position: absolute;
+}
+
+#slider_right {
+    width: 64px;
+    height: 64px;
+    display: block;
+    background-image: url('/Images/rightButton.png');
+    background-size: cover;
+    float: right;
+    top: 89%;
+    position: absolute;
+    right: 1%;
+}
+
+#slider_left {
+    width: 64px;
+    height: 64px;
+    display: block;
+    background-image: url('/Images/leftButton.png');
+    background-size: cover;
+    left: 1%;
+    top: 89%;
+    position: absolute;
+}
+
+#slider {
+    left: -8px;
+    top: -8px;
+    height: 100%;
+    width: 100%;
+}
+
+#slider_container {
+    overflow: hidden;
+    position: absolute;
+}
+
+#slider_moving_container {
+    /*RIGHT*/
+    left: 0px;
+    position: absolute;
+}
+
+#slider_info_1, #slider_info_2, #slider_info_3 {
+    background: #333;
+    width: 99%;
+    height: 25%;
+    min-height: 25%;
+    min-width: 99%;
+    position: absolute;
+    top: 75%;
+    display: block;
+    padding: 22px 32px 0 32px;
+}
+
+#slider_title_1, #slider_title_2, #slider_title_3 {
+    font-family: times;
+    font-size: 30px;
+    text-decoration: none;
+    display: block;
+    margin: 0;
+}
+
+#slider_title_3 {
+    color: tan;
+}
+
+#slider_title_1 {
+    color: goldenrod;
+}
+
+#slider_title_2 {
+    color: aquamarine;
+}
+
+#slider_description_1, #slider_description_2, #slider_description_3 {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 7px 0 0 0;
+}
+
+.slider_element {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+/*--------HTML, BODY ETC----------*/
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    background-image: url(/Images/bg_free.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+a {
+    color: rgb(29, 181, 189);
+}
+
+a:hover {
+    color: rgb(26, 146, 182);
+}
+
+a:visited {
+    color: rgb(26, 146, 182);
+}
+
+img {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+/*--------INFO--------*/
+
+
+.black-block {
+    background-color: rgba(0,0,0,0.5);
+    margin: 0 auto;
+    width: 95%;
+    height: 10%;
+    color: white;
+    margin-bottom: 8%;
+}
+
+#about {
+}
+
+#personal {
+    opacity: 0;
+}
+
+#about_text, #personal_text, .portfolio_text {
+    margin-left: 10%;
+    margin-bottom: 5%;
+    margin-right: 10%;
+    margin-top: 5%;
+    font-size: 23px;
+}
+
+#about_title, .portfolio_title {
+    margin-top: 15%;
+    font-size: 36px;
+    margin-left: 10%;
+    font-weight: bold;
+}
+
+
+#personal_title {
+    margin-top: 10%;
+    font-size: 36px;
+    text-align: center;
+}
+
+
+
+/*-----PORTFOLIO-----*/
+
+#portfolio_1_img {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Images/multiplayer5.jpg');
+}
+
+#portfolio_2_img {
+    background-image: url('/Images/strangerwood3.jpg');
+}
+
+#portfolio_3_img {
+    background-image: url('/Images/phone2.jpg');
+}
+
+#portfolio {
+    width: 100%;
+    height: 100%;
+}
