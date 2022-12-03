@@ -1,5 +1,4 @@
-﻿
-/*-------SLIDER------*/
+﻿/*-------SLIDER------*/
 
 #slider_1, #slider_2, #slider_3, #slider, #slider_container, #slider_moving_container {
     height: 100%;
@@ -26,23 +25,25 @@
     width: 64px;
     height: 64px;
     display: block;
-    background-image: url('/Images/rightButton.png');
+    background-image: url('Images/rightButton.svg');
     background-size: cover;
     float: right;
     top: 89%;
     position: absolute;
     right: 1%;
+	transform: rotate(-90deg);
 }
 
 #slider_left {
     width: 64px;
     height: 64px;
     display: block;
-    background-image: url('/Images/leftButton.png');
+    background-image: url('Images/leftButton.svg');
     background-size: cover;
     left: 1%;
     top: 89%;
     position: absolute;
+	transform: rotate(90deg);
 }
 
 #slider {
@@ -119,7 +120,7 @@ html, body {
 }
 
 html {
-    background-image: url(/Images/bg_free.jpg);
+    background-image: url(Images/bg_free.jpg);
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -194,15 +195,15 @@ img {
     background-size: 100%;
     width: 100%;
     height: 100%;
-    background-image: url('/Images/multiplayer5.jpg');
+    background-image: url('Images/multiplayer5.jpg');
 }
 
 #portfolio_2_img {
-    background-image: url('/Images/strangerwood3.jpg');
+    background-image: url('Images/strangerwood3.jpg');
 }
 
 #portfolio_3_img {
-    background-image: url('/Images/phone2.jpg');
+    background-image: url('Images/phone2.jpg');
 }
 
 #portfolio {
